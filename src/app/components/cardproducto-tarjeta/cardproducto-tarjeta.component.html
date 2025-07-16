@@ -1,11 +1,15 @@
 <div class="card animated fadeIn fast">
-    <img class="card-img-top img-fluid" [src]="producto.img" [alt]="producto.nombre">
+    <div class="card-img-container">
+        <img class="card-img-top" [src]="producto.img" [alt]="producto.nombre">
+    </div>
     <div class="card-body">
-        <h4 class="card-title"> {{ producto.nombre }}</h4>
-        <p class="card-text"> {{ producto.bio}} </p>
-        <p class="card-text"> <small class="text-muted"> {{ producto.aparicion }}</small></p>
-        <button (click)="verProducto()" type="button" class="btn btn-outline-primary btn-block"> Ver más...
+        <h4 class="card-title">{{ producto.nombre }}</h4>
+        <p class="card-text">{{ producto.bio}}</p>
+        <p class="card-text">
+            <small class="text-muted">{{ producto.aparicion }}</small>
+        </p>
+        <button (click)="verProducto()" type="button" class="btn btn-outline-primary w-100">
+            Ver más...
         </button>
-        
     </div>
 </div>
