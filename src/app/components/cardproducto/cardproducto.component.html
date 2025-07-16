@@ -12,8 +12,12 @@
             Precio: {{producto.precio }}
         </p>
         <div>
-            <img *ngIf="producto.casa=='Marvel'" class="img-logo" src="assets/img/marvel-logo.png" alt="DC">
-            <img *ngIf="producto. casa == 'DC'" class="img-logo" src="assets/img/dc-logo.jpg" alt="Marvel">
+            @if (producto.casa === 'Marvel') {
+                <img class="img-logo" src="assets/img/marvel-logo.png" alt="Marvel">
+            }
+            @if (producto.casa === 'DC') {
+                <img class="img-logo" src="assets/img/dc-logo.jpg" alt="DC">
+            }
         </div>
     </div>
 </div>
