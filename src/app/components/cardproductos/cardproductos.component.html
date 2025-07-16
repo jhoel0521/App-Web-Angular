@@ -1,7 +1,9 @@
 <h1>Productos</h1>
 <hr>
 <div class="row row-cols-2 g-3 m-3">
-    <app-cardproducto-tarjeta (prodductosSeleccionado)="verProducto( i )" [producto]="foo" [index]="i"
-        *ngFor="let foo of productos; let i = index">
+    @for (foo of productos; track $index) {
+    <app-cardproducto-tarjeta (prodductosSeleccionado)="verProducto( $index )" [producto]="foo" [index]="$index"
+        >
     </app-cardproducto-tarjeta>
+    }
 </div>
