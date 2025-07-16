@@ -1,1 +1,35 @@
-<p>cardbuscador works!</p>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h2>Resultados de búsqueda para: "{{ termino }}"</h2>
+      <hr>
+    </div>
+  </div>
+  
+  <div class="row" *ngIf="productos.length > 0; else noProductos">
+    <div class="col-md-4 mb-4" *ngFor="let producto of productos; let i = index">
+      <div class="card h-100">
+        <img [src]="producto.img" class="card-img-top" alt="{{ producto.nombre }}" style="height: 200px; object-fit: cover;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ producto.nombre }}</h5>
+          <p class="card-text mt-auto">
+            <strong>Precio: ${{ producto.precio }}</strong>
+          </p>
+          <a [routerLink]="['/producto', i]" class="btn btn-primary">Ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noProductos>
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="alert alert-warning" role="alert">
+          <h4>No se encontraron productos</h4>
+          <p>No hay productos que coincidan con tu búsqueda: <strong>"{{ termino }}"</strong></p>
+          <a routerLink="/productos" class="btn btn-primary">Ver todos los productos</a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -8,8 +8,8 @@ import { CardbuscadorComponent } from './components/cardbuscador/cardbuscador.co
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'productos', component: CardproductosComponent },
-    { path: 'producto:id', component: CardproductoComponent },
-    { path: 'buscar:termino', component: CardbuscadorComponent }, 
+    { path: 'producto/:id', component: CardproductoComponent },
+    { path: 'buscar/:termino', component: CardbuscadorComponent }, 
     { path: 'About', component: AboutComponent },
     { path: '**', redirectTo: '' }
 ];

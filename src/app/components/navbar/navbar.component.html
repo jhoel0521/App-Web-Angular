@@ -5,14 +5,28 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/productos">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/About">Acerca</a>
                 </li>
             </ul>
+            <form class="d-flex" (ngSubmit)="buscarProducto()" #buscarForm="ngForm">
+                <input 
+                    class="form-control me-2" 
+                    type="search" 
+                    placeholder="Buscar productos..." 
+                    aria-label="Buscar"
+                    [(ngModel)]="terminoBusqueda"
+                    name="terminoBusqueda"
+                    required>
+                <button class="btn btn-outline-light" type="submit" [disabled]="!terminoBusqueda">Buscar</button>
+            </form>
         </div>
     </div>
 </nav>
